@@ -8,31 +8,52 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Greenland Ice Sheet: Then vs. Now</h1>
+  <header>
+    <h2>⏳ See the Visible Impact of Climate Change</h2>
+    <p>Use the sliders below to compare real satellite imagery over time.</p>
+  </header>
 
+  <!-- Greenland Slider -->
+  <h1>Greenland Ice Sheet: Then vs. Now</h1>
   <div id="comparison" class="juxtapose">
     <img src="greenland_before.jpg" data-label="1973" />
     <img src="greenland_after.jpg" data-label="2022" />
   </div>
 
-  <div id="facts">
+  <div class="facts">
     <h3>🌍 Fact:</h3>
-    <p>Greenland is losing over <strong>270 billion tons of ice per year</strong> due to climate change. NASA satellite images clearly show glacial retreat from 1990 to 2020.</p>
+    <p>Greenland is losing over <strong>270 billion tons of ice per year</strong> due to climate change. NASA satellite images clearly show glacial retreat over the last several decades.</p>
   </div>
 
-  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+  <!-- Amazon Slider -->
+  <h1>Amazon Rainforest: Then vs. Now</h1>
+  <div class="juxtapose" style="width: 80%; height: 500px; margin: auto;">
+    <img src="amazon_before.png" data-label="2000" />
+    <img src="amazon_after.png" data-label="2012" />
+  </div>
 
+  <div class="facts">
+    <h3>🌲 Fact:</h3>
+    <p>Amazon deforestation rose by <strong>150%</strong> in 20 years, releasing vast amounts of carbon into the atmosphere.</p>
+  </div>
+
+  <footer>
+    <p><strong>Every fraction of a degree matters.</strong> Share this to raise awareness about climate change. 🌎</p>
+  </footer>
+
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="topBtn">🔝 Back to Top</button>
+
+  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
   <script>
-    // Auto-slide reveal animation
+    // Auto-slide reveal animation for the first slider only
     window.addEventListener("load", () => {
-    const handle = document.querySelector(".juxtapose-handle");
-    if (handle) {
+      const handle = document.querySelector(".juxtapose-handle");
+      if (handle) {
         handle.style.transition = "left 3s ease-in-out";
         handle.style.left = "75%";
-        setTimeout(() => handle.blur(), 3500); // remove focus after animation
-    }
+        setTimeout(() => handle.blur(), 3500);
+      }
     });
-
   </script>
 </body>
 </html>
