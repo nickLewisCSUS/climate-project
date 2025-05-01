@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Change Comparison</title>
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Greenland Ice Sheet: Then vs. Now</h1>
+
+  <div id="comparison" class="juxtapose">
+    <img src="greenland_before.jpg" data-label="1973" />
+    <img src="greenland_after.jpg" data-label="2022" />
+  </div>
+
+  <div id="facts">
+    <h3>🌍 Fact:</h3>
+    <p>Greenland is losing over <strong>270 billion tons of ice per year</strong> due to climate change. NASA satellite images clearly show glacial retreat from 1990 to 2020.</p>
+  </div>
+
+  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+
+  <script>
+    // Auto-slide reveal animation
+    window.addEventListener("load", () => {
+    const handle = document.querySelector(".juxtapose-handle");
+    if (handle) {
+        handle.style.transition = "left 3s ease-in-out";
+        handle.style.left = "75%";
+        setTimeout(() => handle.blur(), 3500); // remove focus after animation
+    }
+    });
+
+  </script>
+</body>
+</html>
